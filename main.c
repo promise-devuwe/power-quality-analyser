@@ -19,6 +19,16 @@ int main(int argc, char *argv[]) {
     char names[] = {'A', 'B', 'C'};
 
     for (int i = 0; i < 3; i++) {
-        sprintf(reports[i].phase_name, "Phase %c", names[i]);
+        snprintf(reports[i].phase_name, sizeof(reports[i].phase_name), "Phase %c", names[i]);
         analyze_phase(data, total_samples, names[i], &reports[i]);
     }
+
+    save_results(reports);
+
+    save_results(reports);
+    printf("Successfully analyzed %d samples. Check power_quality_log_results.txt\n", total_samples);
+
+    free(data); // free allocated memory
+
+    return 0;
+}

@@ -6,7 +6,7 @@
  * @brief Basic constants for UK Power Quality (230V RMS)
  */
 
-#define CLIPPING_LIMIT 324.9   /**< Hard limit of the sensor */
+#define CLIPPING_LIMIT 324.99  /**< Hard limit of the sensor */
 #define NOMINAL_RMS 230.0      /**< Standard UK Grid Voltage */
 
 typedef struct {

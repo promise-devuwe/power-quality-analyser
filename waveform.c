@@ -11,6 +11,9 @@ double get_voltage(WaveformSample *sample, char phase) {
 
 /** The main analysis logic using pointers */
 void analyze_phase(WaveformSample *samples, int count, char phase, PhaseReport *report) {
+    if (samples == NULL || report == NULL || count <= 0) {
+        return;
+    }
     double sum_sq = 0.0;
     double sum_raw = 0.0;
     double max_v = get_voltage(samples, phase);
@@ -35,10 +38,14 @@ void analyze_phase(WaveformSample *samples, int count, char phase, PhaseReport *
     report->peak_to_peak = max_v - min_v;         // P-P calculation
     report->clipped_count = clipped;              // Clipping check
 
-    // Compliance: within +/- 10%
-    if (report->rms >= 207.0 && report->rms <= 253.0) {
-        report->is_compliant = 1;
+    // Set acceptable voltage range (±10% of nominal)
+    double lower_limit = NOMINAL_RMS * 0.9;
+    double upper_limit = NOMINAL_RMS * 1.1;
+
+    // Check if RMS is within limits
+    if (report->rms >= lower_limit && report->rms <= upper_limit) {
+        report->is_compliant = 1;  // within range
     } else {
-        report->is_compliant = 0;
+        report->is_compliant = 0;  // outside range
     }
-}
+    }

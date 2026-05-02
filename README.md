@@ -81,7 +81,7 @@ Run:
 - GitHub version control
 
 ## GitHub Repository
-Replace with your actual repository:
+GitHub Repository:
 https://github.com/promise-devuwe/power-quality-analyser
 
 ## Author

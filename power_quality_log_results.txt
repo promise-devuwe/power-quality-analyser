@@ -1,0 +1,44 @@
+Power Quality Waveform Analysis Report
+====================================
+
+Input file: ../power_quality_log.csv
+Number of samples: 1000
+
+Phase A
+------------------------------
+RMS Voltage: 229.810 V
+Peak-to-Peak Voltage: 650.000 V
+DC Offset: -0.000000 V
+Variance: 52812.500
+Standard Deviation: 229.810
+Clipped Samples: 20
+Compliance: COMPLIANT
+Status Flags: 0x01
+
+Phase B
+------------------------------
+RMS Voltage: 229.810 V
+Peak-to-Peak Voltage: 649.857 V
+DC Offset: 0.000000 V
+Variance: 52812.500
+Standard Deviation: 229.810
+Clipped Samples: 20
+Compliance: COMPLIANT
+Status Flags: 0x01
+
+Phase C
+------------------------------
+RMS Voltage: 229.810 V
+Peak-to-Peak Voltage: 649.857 V
+DC Offset: -0.000000 V
+Variance: 52812.500
+Standard Deviation: 229.810
+Clipped Samples: 20
+Compliance: COMPLIANT
+Status Flags: 0x01
+
+Overall System Information
+------------------------------
+Frequency Range: 50.000 Hz to 50.048 Hz
+Power Factor Range: 0.950 to 0.962
+THD Range: 2.000 % to 2.184 %
